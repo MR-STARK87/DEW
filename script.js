@@ -10,7 +10,7 @@ const favCity = document.getElementById("favCityInput");
 const getFavBtn = document.getElementById("getFavBtn");
 const clrFavBtn = document.getElementById("clrFavBtn");
 
-let favoriteCity = localStorage.getItem("FavCity") || "new york";
+let favoriteCity = localStorage.getItem("FavCity") || "New York";
 
 const weatherdata = async function fetchWeatherData(city) {
   const options = {
@@ -119,8 +119,8 @@ const weatherCode = {
 
 async function displayWeatherData(weatherData, city) {
   let weathCode = weatherData.timelines.hourly[0].values.weatherCode;
-  temperatureDisplay.textContent = `Current Temperature: ${weatherData.timelines.hourly[0].values.temperature}`;
-  appTempDisplay.textContent = `Feels like ${weatherData.timelines.hourly[0].values.temperatureApparent}`;
+  temperatureDisplay.textContent = `Current Temperature: ${weatherData.timelines.hourly[0].values.temperature} C`;
+  appTempDisplay.textContent = `Feels like ${weatherData.timelines.hourly[0].values.temperatureApparent} C`;
   cityNameDisplay.textContent = weatherData.location.name;
   descriptionDisplay.textContent = weatherCode[weathCode];
   WeatherInfo.classList.add("flex");
