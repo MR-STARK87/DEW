@@ -10,7 +10,7 @@ const favCity = document.getElementById("favCityInput");
 const getFavBtn = document.getElementById("getFavBtn");
 const clrFavBtn = document.getElementById("clrFavBtn");
 
-let favoriteCity = localStorage.getItem("FavCity") || "New York";
+let favoriteCity = localStorage.getItem("FavCity") || "";
 
 const weatherdata = async function fetchWeatherData(city) {
   const options = {
