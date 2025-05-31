@@ -3,97 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DropWave Weather</title>
     <link rel="stylesheet" href="output.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-
   <body
-    class="relative flex flex-col justify-start items-center space-y-6 h-screen font-nunito overflow-hidden tracking-wide 
-            text-sky-600"
+    class="relative font-quick h-screen overflow-hidden tracking-wide text-shadow-2xs text-shadow-purple-500 text-[#fafafa]"
   >
-   
-    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover overflow-hidden scale-x-150 scale-y-[160%] -z-50">
-  <source src="dropclear.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-    <header class="mt-10 flex flex-col gap-4 justify-center items-center">
-      <div id="logo" class="">
-        <h1 class="my-10 text-7xl font-bold tracking-tighter text-sky-500">
-          <span class="inline-block z-10 ">D</span>
-          <span class="inline-block z-10 pt-5 mt-4 "
-            ><img src="bluewave.svg" class="w-13 font-extrabold font-stretch-ultra-expanded pt-8" alt=""
-          /></span>
-          <span class="inline-block -z-50 -ml-1">W</span>
-        </h1>
-
-      </div>
-
-      <h1 class="text-3xl text-center text-shadow-sky-50 shadow-xs">
-        Weather so accurate, it counts every dew drop
-      </h1>
-    </header>
-
     <div
-      class="appwindow sm:w-96 w-11/12 h-max pb-5 flex flex-col items-center 
-             bg-white/20 backdrop-blur-xs border border-white/30 shadow-md rounded-2xl"
+      class="banner w-full h-full flex flex-col justify-start items-center sm:space-y-6 space-y-5 relative"
     >
-      <div id="inputField" class="w-11/12 flex justify-between mt-7">
-        <input
-          id="cityInput"
-          type="text"
-          placeholder="Type City Name"
-          class="w-3/5 rounded-md border-4 border-sky-400  shadow-md bg-sky-400 backdrop-blur-sm 
-                 text-white placeholder:text-sky-100 placeholder:pl-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        />
-        <button
-          id="getWeatherBtn"
-          class="w-3/8 p-1 rounded-md hover:brightness-125 bg-sky-400 text-sky-100"
-        >
-          Get Weather
-        </button>
-      </div>
-
-      <div id="secInputField" class="w-11/12 flex justify-start gap-3 mt-7">
-        <input
-          id="favCityInput"
-          type="text"
-          placeholder="Add Home City"
-          class="w-3/5 rounded-md border-4 border-sky-400 shadow-md bg-sky-400 backdrop-blur-md 
-                 text-white placeholder:text-sky-100 placeholder:pl-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        />
-        <div id="buttons" class="flex w-3/8 justify-between">
-          <button
-            id="getFavBtn"
-            class="p-1 rounded-md bg-sky-400 hover:brightness-125 text-sky-100"
+      <header
+        class="sm:mt-10 flex flex-col justify-center items-center font-bold text-purple-600 sm:backdrop-blur-xs sm:bg-transparent"
+      >
+        <div id="logo" class="backdrop:blur-3xl">
+          <svg
+            width="180"
+            height="137"
+            viewBox="0 0 180 137"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Add
-          </button>
-
-          <button
-            id="clrFavBtn"
-            class="p-1 rounded-md bg-sky-400 hover:brightness-125 text-sky-100"
-          >
-            Clear
-          </button>
+            <rect width="180" height="137" fill="" />
+            <path
+              d="M83.4078 116.45C84.7953 116.336 85.9805 115.794 86.9633 114.823C87.9461 113.853 88.4375 112.683 88.4375 111.312C88.4375 109.714 87.9172 108.43 86.8766 107.459C85.8359 106.489 84.5063 106.061 82.8875 106.175C78.1469 106.518 73.1172 105.233 67.7984 102.322C62.4797 99.4106 59.1266 94.1304 57.7391 86.4812C57.5078 85.2254 56.9008 84.1979 55.918 83.3988C54.9352 82.5996 53.8078 82.2 52.5359 82.2C50.9172 82.2 49.5875 82.7994 48.5469 83.9981C47.5063 85.1969 47.1594 86.5954 47.5063 88.1937C49.4719 98.5829 54.0969 106.004 61.3813 110.456C68.6656 114.909 76.0078 116.907 83.4078 116.45ZM81.5 137C65.6594 137 52.4492 131.634 41.8695 120.903C31.2898 110.171 26 96.8133 26 80.83C26 69.4133 30.5961 56.9977 39.7883 43.5831C48.9805 30.1685 62.8844 15.6408 81.5 0C100.116 15.6408 114.02 30.1685 123.212 43.5831C132.404 56.9977 137 69.4133 137 80.83C137 96.8133 131.71 110.171 121.13 120.903C110.551 131.634 97.3406 137 81.5 137ZM81.5 123.3C93.525 123.3 103.469 119.276 111.331 111.227C119.194 103.178 123.125 93.0458 123.125 80.83C123.125 72.4958 119.627 63.0771 112.632 52.5737C105.637 42.0704 95.2594 30.5967 81.5 18.1525C67.7406 30.5967 57.3633 42.0704 50.368 52.5737C43.3727 63.0771 39.875 72.4958 39.875 80.83C39.875 93.0458 43.8063 103.178 51.6688 111.227C59.5312 119.276 69.475 123.3 81.5 123.3Z"
+              fill="#B3A0F9"
+            />
+            <path
+              d="M19.8625 58.2C22.9345 58.2 25.6652 58.776 28.0545 59.928C30.4438 61.08 32.4492 62.7013 34.0705 64.792C35.7345 66.84 36.9718 69.2293 37.7825 71.96C38.6358 74.648 39.0625 77.528 39.0625 80.6C39.0625 84.7387 38.3158 88.5147 36.8225 91.928C35.3292 95.2987 33.1532 97.9867 30.2945 99.992C27.4785 101.997 24.0012 103 19.8625 103H4.56649C3.45715 103 2.51849 102.637 1.75049 101.912C1.02515 101.144 0.662488 100.205 0.662488 99.096V62.104C0.662488 60.9947 1.02515 60.0773 1.75049 59.352C2.51849 58.584 3.45715 58.2 4.56649 58.2H19.8625ZM19.2225 95.64C21.9105 95.64 24.1078 94.9573 25.8145 93.592C27.5212 92.184 28.7585 90.3493 29.5265 88.088C30.3372 85.784 30.7425 83.288 30.7425 80.6C30.7425 78.5947 30.5078 76.696 30.0385 74.904C29.6118 73.0693 28.9292 71.4693 27.9905 70.104C27.0518 68.696 25.8572 67.5867 24.4065 66.776C22.9558 65.9653 21.2278 65.56 19.2225 65.56H8.02249L8.66249 64.984V96.344L8.27849 95.64H19.2225ZM174.93 58.008C175.912 58.008 176.85 58.392 177.746 59.16C178.642 59.8853 179.09 60.888 179.09 62.168C179.09 62.552 179.026 62.9787 178.898 63.448L166.29 100.568C166.034 101.336 165.565 101.933 164.882 102.36C164.242 102.744 163.56 102.957 162.834 103C162.109 103 161.384 102.787 160.658 102.36C159.976 101.933 159.442 101.315 159.058 100.504L149.586 79L150.162 79.384L140.818 100.504C140.434 101.315 139.88 101.933 139.154 102.36C138.472 102.787 137.768 103 137.042 103C136.36 102.957 135.677 102.744 134.994 102.36C134.312 101.933 133.842 101.336 133.586 100.568L120.978 63.448C120.85 62.9787 120.786 62.552 120.786 62.168C120.786 60.888 121.234 59.8853 122.13 59.16C123.069 58.392 124.029 58.008 125.01 58.008C125.821 58.008 126.568 58.2213 127.25 58.648C127.976 59.0747 128.466 59.6933 128.722 60.504L138.898 91.352L137.49 91.288L146.578 69.464C146.92 68.696 147.41 68.0987 148.05 67.672C148.69 67.2027 149.416 66.9893 150.226 67.032C151.037 66.9893 151.762 67.2027 152.402 67.672C153.042 68.0987 153.512 68.696 153.81 69.464L162.13 90.328L161.106 90.968L171.154 60.504C171.41 59.6933 171.901 59.0747 172.626 58.648C173.352 58.2213 174.12 58.008 174.93 58.008Z"
+              fill="#9333ea"
+            />
+            <path
+              d="M99.1087 70.625C97.9348 71.75 96.587 72.6042 95.0652 73.1875C93.5435 73.7708 92.0217 74.0625 90.5 74.0625C88.9783 74.0625 87.4783 73.7812 86 73.2188C84.5217 72.6562 83.1957 71.7917 82.0217 70.625L77.1304 65.9375C76.4783 65.3125 75.7391 64.8438 74.913 64.5312C74.087 64.2188 73.2391 64.0625 72.3696 64.0625C71.5 64.0625 70.6522 64.2188 69.8261 64.5312C69 64.8438 68.2609 65.3125 67.6087 65.9375L62.7174 70.625L59 67.0625L63.8913 62.375C65.0652 61.25 66.3913 60.4062 67.8696 59.8438C69.3478 59.2812 70.8478 59 72.3696 59C73.8913 59 75.3804 59.2812 76.837 59.8438C78.2935 60.4062 79.6087 61.25 80.7826 62.375L85.6739 67.0625C86.3696 67.7292 87.1304 68.2188 87.9565 68.5312C88.7826 68.8438 89.6304 69 90.5 69C91.3696 69 92.2283 68.8438 93.0761 68.5312C93.9239 68.2188 94.6957 67.7292 95.3913 67.0625L100.283 62.375L104 65.9375L99.1087 70.625ZM99.1087 83.125C97.9348 84.25 96.5978 85.0938 95.0978 85.6562C93.5978 86.2188 92.087 86.5 90.5652 86.5C89.0435 86.5 87.5326 86.2188 86.0326 85.6562C84.5326 85.0938 83.1957 84.25 82.0217 83.125L77.1304 78.4375C76.4783 77.8125 75.7391 77.3438 74.913 77.0312C74.087 76.7188 73.2391 76.5625 72.3696 76.5625C71.5 76.5625 70.6522 76.7188 69.8261 77.0312C69 77.3438 68.2609 77.8125 67.6087 78.4375L62.7174 83.125L59 79.625L63.8913 74.875C65.0652 73.75 66.3913 72.9062 67.8696 72.3438C69.3478 71.7812 70.8478 71.5 72.3696 71.5C73.8913 71.5 75.3804 71.7812 76.837 72.3438C78.2935 72.9062 79.6087 73.75 80.7826 74.875L85.6739 79.5625C86.3696 80.2292 87.1304 80.7188 87.9565 81.0312C88.7826 81.3438 89.6304 81.5 90.5 81.5C91.3696 81.5 92.2283 81.3438 93.0761 81.0312C93.9239 80.7188 94.6957 80.2292 95.3913 79.5625L100.283 74.875L104 78.4375L99.1087 83.125ZM99.0435 95.625C97.8696 96.75 96.5435 97.5938 95.0652 98.1562C93.587 98.7188 92.087 99 90.5652 99C89.0435 99 87.5326 98.7188 86.0326 98.1562C84.5326 97.5938 83.1957 96.75 82.0217 95.625L77.0652 90.9375C76.413 90.3125 75.6739 89.8438 74.8478 89.5312C74.0217 89.2188 73.1739 89.0625 72.3043 89.0625C71.4348 89.0625 70.587 89.2188 69.7609 89.5312C68.9348 89.8438 68.1957 90.3125 67.5435 90.9375L62.6522 95.625L59 92.125L63.8913 87.375C65.0652 86.25 66.3913 85.4062 67.8696 84.8438C69.3478 84.2812 70.8478 84 72.3696 84C73.8913 84 75.3804 84.2812 76.837 84.8438C78.2935 85.4062 79.6087 86.25 80.7826 87.375L85.6739 92.0625C86.3696 92.7292 87.1413 93.2188 87.9891 93.5312C88.837 93.8438 89.6957 94 90.5652 94C91.4348 94 92.2826 93.8438 93.1087 93.5312C93.9348 93.2188 94.6957 92.7292 95.3913 92.0625L100.283 87.375L103.935 90.9375L99.0435 95.625Z"
+              fill="#9333ea"
+            />
+          </svg>
         </div>
-      </div>
+
+        <h1 class="sm:text-4xl text-2xl text-center">
+          Weather so accurate, it counts every dew drop
+        </h1>
+      </header>
 
       <div
-        id="infoField"
-        class="w-11/12 hidden flex flex-col gap-4 justify-center items-center mt-4 text-lg rounded-lg 
-               border border-white/30 shadow-md bg-sky-400 backdrop-blur-md text-white placeholder:text-sky-100"
+        class="appwindow sm:w-96 backdrop-blur-lg w-11/12 h-max pb-5 flex flex-col items-center bg-[#ebe7fd] shadow-purple-200 shadow-2xl rounded-2xl"
       >
-        <h2 id="cityName" class="text-center"></h2>
-        <p id="tempDisplay"></p>
-        <p id="appTempDisplay"></p>
-        <p id="weatherDescription"></p>
-        <p id="errorMessage" class="hidden">City not found, Please try again</p>
-      </div>
-     
+        <div id="inputField" class="w-11/12 flex justify-between mt-7">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Type City Name"
+            class="w-3/5 rounded-md border-4 border-purple-600 shadow-md bg-purple-600 backdrop-blur-sm text-white placeholder:text-purple-100 placeholder:pl-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
+          />
+          <button
+            id="getWeatherBtn"
+            class="w-3/8 p-1 rounded-md hover:brightness-125 bg-purple-600 text-purple-100"
+          >
+            Get Weather
+          </button>
+        </div>
 
-      <script src="script.js"></script>
-    </body>
+        <div id="secInputField" class="w-11/12 flex justify-start gap-3 mt-7">
+          <input
+            id="favCityInput"
+            type="text"
+            placeholder="Add Home City"
+            class="w-3/5 rounded-md border-4 border-purple-600 shadow-md bg-purple-600 backdrop-blur-md text-white placeholder:text-purple-100 placeholder:pl-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
+          />
+          <div id="buttons" class="flex w-3/8 justify-between">
+            <button
+              id="getFavBtn"
+              class="p-1 rounded-md bg-purple-600 hover:brightness-125 text-purple-100"
+            >
+              Add
+            </button>
+
+            <button
+              id="clrFavBtn"
+              class="p-1 rounded-md bg-purple-600 hover:brightness-125 text-purple-100"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="infoField"
+          class="w-11/12 hidden flex flex-col gap-4 justify-center items-center mt-4 text-lg rounded-lg border border-white/30 shadow-md bg-purple-500 backdrop-blur-md text-white placeholder:text-purple-100"
+        >
+          <h2 id="cityName" class="text-center"></h2>
+          <p id="tempDisplay"></p>
+          <p id="appTempDisplay"></p>
+          <p id="weatherDescription"></p>
+          <p id="errorMessage" class="hidden">
+            City not found, Please try again
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
