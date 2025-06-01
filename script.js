@@ -10,7 +10,13 @@ const favCity = document.getElementById("favCityInput");
 const getFavBtn = document.getElementById("getFavBtn");
 const clrFavBtn = document.getElementById("clrFavBtn");
 
-let favoriteCity = localStorage.getItem("FavCity") || "";
+let favoriteCity = localStorage.getItem("FavCity") || "Mumbai";
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.querySelector(".banner").classList.add("inked");
+  }, 800);
+});
 
 const weatherdata = async function fetchWeatherData(city) {
   const options = {
