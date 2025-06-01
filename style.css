@@ -5,12 +5,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(newpurple.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
-
-  mask-image: url(finakmask.gif);
+  background-image: none;
+  mask-image: none;
   mask-size: cover;
   mask-position: center;
+  transition: background-image 0.6 ease-in-out;
+}
+.banner.inked::before {
+  background-image: url(newpurple.jpg);
+  mask-image: url(finakmask.gif);
 }
